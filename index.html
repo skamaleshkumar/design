@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Log In</h1>
+        <form name="f1" action = "authentication.php" onsubmit = "return validation()" method = "POST">  
+        <input type="text" placeholder="username" id="name" required=" "><br>
+        <input type="password" placeholder="password" id="pass" required=" "><br>
+        <button type="submit" id="button">Login</button>
+        </form>
+    </div>
+    <script>  
+        function validation()  
+        {  
+            var name=document.f1.name.value;  
+            var pass=document.f1.pass.value;
+            var regmail=/^\W+([\.-]?\W+)*@\W+([\.-]?\W+)*(\.\W{2,3})+$/g; 
+            if(name==""||!regmail.test(name)) {  
+                alert("User Name and Password fields are empty");  
+                return false;  
+            }  
+            if(pass.length<6) {  
+                alert("password must be at least 6 character");  
+                return false;  
+            }                      
+        }  
+    </script>  
+</body>
+</html>
